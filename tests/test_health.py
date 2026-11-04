@@ -6,7 +6,7 @@ test = TestClient(app)
 
 def test_head():
 
-    response = test.get("/heath")
+    response = test.get("/health")
 
     assert response.status_code == 200
     assert response.json() == {"menssagem": "API rodando com sucesso"}
