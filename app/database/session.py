@@ -15,7 +15,7 @@ sessionlocal = sessionmaker(
 )
 
 # A classe que todos os modelos vão herdar 
-class base(DeclarativeBase):
+class Base(DeclarativeBase):
 
     pass
 

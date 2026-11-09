@@ -1,0 +1,11 @@
+
+from datetime import datetime, timezone
+from sqlalchemy import String, DateTime
+from sqlalchemy.orm import Mapped, mapped_column
+from app.database.session import Base
+
+
+class User(Base):
+
+    __tablename__ = "users"
+
