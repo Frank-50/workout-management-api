@@ -25,5 +25,9 @@ class User(Base):
     password_hash: Mapped[str] = mapped_column(
         nullable=False
     )
-                
-        
+
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        default = lambda: datetime.now(timezone.utc),
+        nullable = False   
+    )
