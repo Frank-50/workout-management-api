@@ -1,6 +1,7 @@
 
 from pydantic import BaseModel, EmailStr, ConfigDict, StringConstraints, field_validator
 from typing import Annotated, Any
+from datetime import datetime
 
 class UserCreate(BaseModel):
 
@@ -15,4 +16,12 @@ class UserCreate(BaseModel):
             value = value.strip().lower()
         return value
     
+class UserRead(BaseModel):
 
+    id: int
+    name: str
+    email: str
+    created_at: datetime
+    updated_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
