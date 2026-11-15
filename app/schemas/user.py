@@ -8,5 +8,11 @@ class UserCreate(BaseModel):
     email: EmailStr
     password: Annotated[str,StringConstraints(min_length=8, max_length=12)]
 
+    @field_validator("email", mode="before")
+    @classmethod
+    def normalize_email(cls, value: Any) -> Any:
+        if isinstance(value, str):
+            value = value.strip().lower()
+        return value
     
 
